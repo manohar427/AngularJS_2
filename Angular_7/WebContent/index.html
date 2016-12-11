@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<script type="text/javascript" src="angular.js"></script>
+<script type="text/javascript" src="myModules.js"></script>
+<title>Insert title here</title>
+</head>
+<body ng-app="myApp">
+
+	<div ng-controller="controller1">
+
+     <input type="number" min="1" max="7" step="2" ng-model="recordCount"></input>
+		<table border="1" bordercolor="blue">
+		 
+		 <thead>
+		   <th>Name </th>
+		   <th>DOB</th>
+		   <th>Salary</th>
+		   <th>Email</th>
+		 </thead>
+		 
+		 <tbody>
+		   <tr ng-repeat="person in persons|limitTo:recordCount">
+		   <td>{{person.name|uppercase}}</td>
+		   <td>{{person.dob|date:"dd/MM/yyyy"}}</td>
+		   <td>{{person.salary|currency}}</td>
+		   <td>{{person.email|lowercase}}</td>
+		   </tr>
+		 </tbody>
+		</table>
+
+	</div>
+</body>
+</html>

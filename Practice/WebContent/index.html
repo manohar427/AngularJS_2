@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<script type="text/javascript" src="angular.js"></script>
+<script type="text/javascript" src="myController.js"></script>
+<title>Insert title here</title>
+</head>
+<body ng-app="myApp">
+  <div ng-controller="myController">
+  Search:<input type='text' ng-model='searchText'/>
+  <table border="1">
+		   <thead>
+		      <th>Country</th>
+		      <th>Code 1</th>
+		      <th>Code 2</th>
+		   </thead>
+		   <tr ng-repeat="contry in contries|filter:searchText:true">
+		     <td>{{contry.name}}</td>
+		     <td>{{contry.alpha2_code}}</td>
+		     <td>{{contry.alpha3_code}}</td>
+		   </tr>
+		</table>
+  </div>
+</body>
+</html>

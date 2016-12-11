@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<script type="text/javascript" src="angular.js"></script>
+<script type="text/javascript" src="myModules.js"></script>
+<title>Insert title here</title>
+</head>
+<body ng-app="myApp">
+
+	<div ng-controller="controller1">
+
+Search Text:<input type="text" ng-model='searchText'/><input type="checkbox" ng-model="caseSence"> <BR/>
+		<table border="1" bordercolor="blue">
+		 
+		 <thead>
+		   <th>Contry Name </th>
+		   <th>alpha2_code</th>
+		   <th>alpha3_code</th>
+		 </thead>
+		 
+		 <tbody>
+		   <tr ng-repeat="contry in contries|filter:searchText:caseSence">
+		   <td>{{contry.name}}</td>
+		   <td>{{contry.alpha2_code}}</td>
+		   <td>{{contry.alpha3_code}}</td>
+		   </tr>
+		 </tbody>
+		</table>
+
+	</div>
+</body>
+</html>
